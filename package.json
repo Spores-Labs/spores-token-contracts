@@ -1,0 +1,25 @@
+{
+  "name": "smart-contracts",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "test": "truffle test --network test",
+    "prettier": "prettier --write **/*.sol",
+    "deploy-rinkeby": "truffle migrate --network rinkeby",
+    "deploy-development": "truffle migrate --network development --reset",
+    "deploy-rinkeby-reset": "truffle migrate --network rinkeby --reset",
+    "verify-rinkeby": "truffle run verify SporesToken --network rinkeby && truffle run verify SporesTokenVesting --network rinkeby"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.4.0-solc-0.7",
+    "@truffle/hdwallet-provider": "^1.4.0",
+    "bn.js": "^5.2.0",
+    "config-js": "^1.1.15"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.0",
+    "prettier-plugin-solidity": "^1.0.0-beta.10",
+    "solhint": "^3.2.0",
+    "truffle-plugin-verify": "^0.5.8"
+  }
+}
