@@ -19,6 +19,7 @@ contract('SporesTokenVesting', (accounts) => {
         vestHub = await SporesTokenVestingMock.new(token.address, listingDatetimestamp, { from: owner });
 
         // Add minter role
+        await token.addSender(vestHub.address);
         await token.mint(vestHub.address, _cap, { from: owner });
 
         // Add beneficiaries
