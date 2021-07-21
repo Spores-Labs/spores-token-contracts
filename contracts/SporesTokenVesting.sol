@@ -102,7 +102,7 @@ contract SporesTokenVesting is Ownable {
 
 		// Add new vesting beneficiary
 		uint256 _leftOverVestingAmount = _amount.sub(_upfrontAmount);
-		uint256 vestingStartedAt = tokenListingDate.add(_duration);
+		uint256 vestingStartedAt = tokenListingDate.add(_lockDuration);
 		beneficiaries[_beneficiary] = VestingBeneficiary(
 			_beneficiary,
 			_lockDuration,
