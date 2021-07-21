@@ -45,7 +45,7 @@ contract SporesTokenVesting is Ownable {
 	}
 
 	// only owner or added beneficiaries can release the vesting amount
-	modifier onlyBeneficiaries {
+	modifier onlyBeneficiaries() {
 		require(
 			owner() == _msgSender() || beneficiaries[_msgSender()].amount > 0,
 			"You cannot release tokens!"
@@ -70,7 +70,7 @@ contract SporesTokenVesting is Ownable {
 				beneficiaryAddresses[i]
 			];
 
-			info.startedAt = _tokenListingDate;
+			info.startedAt = _tokenListingDate.add(info.lockDuration);
 		}
 	}
 
@@ -102,6 +102,7 @@ contract SporesTokenVesting is Ownable {
 
 		// Add new vesting beneficiary
 		uint256 _leftOverVestingAmount = _amount.sub(_upfrontAmount);
+		uint256 vestingStartedAt = tokenListingDate.add(_duration);
 		beneficiaries[_beneficiary] = VestingBeneficiary(
 			_beneficiary,
 			_lockDuration,
@@ -110,7 +111,7 @@ contract SporesTokenVesting is Ownable {
 			_leftOverVestingAmount,
 			_upfrontAmount,
 			_upfrontAmount,
-			tokenListingDate,
+			vestingStartedAt,
 			_interval,
 			0
 		);
@@ -184,20 +185,6 @@ contract SporesTokenVesting is Ownable {
 			_beneficiary
 		);
 
-		// If beneficiary has no lock time.
-		if (info.lockDuration == 0) {
-			return (
-				_vestedAmount,
-				_vestedAmount.sub(info.released),
-				_lastIntervalDate
-			);
-		}
-
-		// If beneficiary has lock time
-		if (info.startedAt.add(info.lockDuration) > block.timestamp) {
-			return (_vestedAmount, 0, _lastIntervalDate);
-		}
-
 		return (
 			_vestedAmount,
 			_vestedAmount.sub(info.released),
@@ -262,9 +249,9 @@ contract SporesTokenVesting is Ownable {
 
 		if (multiplyIntervals > 0) {
 			uint256 newVestedAmount = info
-			.leftOverVestingAmount
-			.mul(multiplyIntervals.mul(info.interval))
-			.div(info.duration);
+				.leftOverVestingAmount
+				.mul(multiplyIntervals.mul(info.interval))
+				.div(info.duration);
 
 			totalVestedAmount = totalVestedAmount.add(newVestedAmount);
 		}
@@ -298,7 +285,7 @@ contract SporesTokenVesting is Ownable {
 	/**
 	 * @dev Release vested tokens to a all beneficiaries.
 	 */
-	function releaseAllTokens() public onlyBeneficiaries {
+	function releaseBeneficiaryTokens() public onlyOwner {
 		// Get current vesting beneficiaries
 		uint256 beneficiariesCount = beneficiaryAddresses.length;
 		for (uint256 i = 0; i < beneficiariesCount; i++) {

@@ -254,51 +254,27 @@ const tesnetBeneficiaries = [
     // ecosystem
     {
         address: "0xB71010cfAB22d4A8b80010c1FF90d57EF1D80a30",
-        amount: "125000000",
+        amount: "250000000",
         upfrontAmount: "0",
-        lockDuration: "60", // 1 month
-        vestingDuration: "0",
-        vestingInternal: "0",
+        lockDuration: "0",
+        vestingDuration: "120",
+        vestingInternal: "60",
     },
     {
         address: "0xe54dfbAde632D17DF10a2517c6A57acD3EbA23B2",
-        amount: "125000000",
+        amount: "250000000",
         upfrontAmount: "0",
         lockDuration: "120", // 2 month
-        vestingDuration: "0",
-        vestingInternal: "0",
+        vestingDuration: "120",
+        vestingInternal: "60",
     },
     {
         address: "0xb20fE47a815189e0AF085F6924Bcd609d6f8a3F2",
-        amount: "125000000",
-        upfrontAmount: "0",
-        lockDuration: "180", // 3 month
-        vestingDuration: "0",
-        vestingInternal: "0",
-    },
-    {
-        address: "0x45F7F04096CE5FD7dCe63861002A2c04f7c034Dc",
-        amount: "125000000",
+        amount: "250000000",
         upfrontAmount: "0",
         lockDuration: "240", // 4 month
-        vestingDuration: "0",
-        vestingInternal: "0",
-    },
-    {
-        address: "0x5771510050A37fA274D1d312062AD5851Bc78512",
-        amount: "125000000",
-        upfrontAmount: "0",
-        lockDuration: "300", // 5 month
-        vestingDuration: "0",
-        vestingInternal: "0",
-    },
-    {
-        address: "0x7106C9FEEFa2E5Dbabf4053d2aa898Bde9c6ab17",
-        amount: "125000000",
-        upfrontAmount: "0",
-        lockDuration: "360", // 6 month
-        vestingDuration: "0",
-        vestingInternal: "0",
+        vestingDuration: "120",
+        vestingInternal: "60",
     },
     // total mining 25% 1,250,000,000 1,25b
     // mining
@@ -473,8 +449,8 @@ const mainnetBeneficiaries = [
 ];
 
 const token = {
-    name: 'Spores Token 2',
-    symbol: 'SPO2',
+    name: 'Spores Token 5',
+    symbol: 'SPO4',
     decimals: 18,
     cap: '5000000000000000000000000000'
 }
