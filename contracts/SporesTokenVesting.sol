@@ -211,9 +211,7 @@ contract SporesTokenVesting is Ownable {
 		if (info.duration == 0) {
 			return (
 				info.amount,
-				info.lockDuration > 0
-					? info.startedAt.add(info.lockDuration)
-					: info.startedAt
+				info.startedAt
 			);
 		}
 
