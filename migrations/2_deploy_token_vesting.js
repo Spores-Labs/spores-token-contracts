@@ -47,6 +47,7 @@ module.exports = async (deployer, network, accounts) => {
     console.log(`SporesTokenVesting contract deployed to ${network} at address ${tokenVestingInstance.address}`);
     // Add role minter to vesting contract
     console.log(`Mint tokens to ${tokenVestingInstance.address}`);
+    await tokenInstance.addSender(tokenVestingInstance.address);
     await tokenInstance.mint(tokenVestingInstance.address, _cap, { from: accounts[0] });
     const balance = await tokenInstance.balanceOf(tokenVestingInstance.address);
     console.log(`Vesting contract balance: ${balance.toString()}`);

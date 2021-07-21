@@ -12,6 +12,10 @@ contract SporesToken is
 {
 	uint256 private TOKEN_MAX_CAP;
 	uint8 private TOKEN_DECIMALS;
+	bytes32 public constant SENDER_ROLE = keccak256("SENDER_ROLE");
+
+	// to be included in the variables at the beginning
+	address public launchPool; // holds the address of the uniswap pool
 
 	constructor(
 		string memory _name,
@@ -21,6 +25,29 @@ contract SporesToken is
 	) ERC20PresetMinterPauser(_name, _symbol) {
 		TOKEN_MAX_CAP = _cap;
 		TOKEN_DECIMALS = _decimals;
+
+		_setupRole(SENDER_ROLE, _msgSender());
+		
+		launchPool = getLiquidityPool();
+	}
+
+// function to be called only by the owner of the contract. This will add the account to the list of addresses that can send the tokens before liquidity addition
+	function addSender(address account) external onlyOwner { 
+		_setupRole(SENDER_ROLE, account);
+	}
+
+	modifier launchRestrict(address sender) {
+		// check if the uniswap pool tokens count is 0. If balance is 0, there are no lp tokens yet.
+		// When there are no LP tokens, allow only those who has sender role to send tokens.
+		if (balanceOf(launchPool) == 0) { 
+			require(hasRole(SENDER_ROLE, sender),"Token: transfers are disabled"); 
+		}
+		_;
+	}
+
+	// Add launchRestrict modifier on the transfer function, all transfer transactions go through this
+	function _transfer(address sender, address recipient, uint256 amount) internal override launchRestrict(sender) {
+		super._transfer(sender, recipient, amount);
 	}
 
 	/**
