@@ -140,7 +140,7 @@ contract SporesToken is
 		uint256 _amount
 	) internal override {
 		super._beforeTokenTransfer(_from, _to, _amount);
-		LiquidityProtection_beforeTokenTransfer(_from, _to, _amount);
+		// LiquidityProtection_beforeTokenTransfer(_from, _to, _amount);
 	}
 
 	function protectionChecker() internal view override returns (bool) {
@@ -149,6 +149,7 @@ contract SporesToken is
 
 	// This token will be pooled in pair with:
 	function counterToken() internal pure override returns (address) {
-		return 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2; // WETH
+		// return 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2; // WETH
+		return 0xc778417E063141139Fce010982780140Aa0cD5Ab; // WETH9
 	}
 }

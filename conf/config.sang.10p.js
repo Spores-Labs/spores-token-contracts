@@ -8,8 +8,8 @@ const tesnetBeneficiaries = [
     amount: "100000000", // 100m
     upfrontAmount: "5000000", // 5% 5m
     lockDuration: "0",
-    vestingDuration: "1080", // 18 months (30 days as a month) 46656000 seconds,
-    vestingInternal: "60", // release vesting per 1 month
+    vestingDuration: "10800", // 18 months (30 days as a month) 46656000 seconds,
+    vestingInternal: "600", // release vesting per 1 month
   },
   // public sale 80,000,000
   {
@@ -26,8 +26,8 @@ const tesnetBeneficiaries = [
     amount: "660000000", // 660m
     upfrontAmount: "33000000", // 5% 33m
     lockDuration: "0",
-    vestingDuration: "720", // 12 months (30 days as a month)
-    vestingInternal: "60", // release vesting per 1 month
+    vestingDuration: "7200", // 12 months (30 days as a month)
+    vestingInternal: "600", // release vesting per 1 month
   },
   // ==========================================================================
   // total team 15% 750,000,000
@@ -39,7 +39,7 @@ const tesnetBeneficiaries = [
     address: "0x0aC0C1680c007afD24e7F5538c704A3a9Eb302a5",
     amount: "10000000", // 10m
     upfrontAmount: "0",
-    lockDuration: "1440", // lock 2 years
+    lockDuration: "14400", // lock 2 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -48,7 +48,7 @@ const tesnetBeneficiaries = [
     address: "0xC0e09A112Ae45d87597CD78c11b7D95a55aCC5F0",
     amount: "15000000", // 15m
     upfrontAmount: "0",
-    lockDuration: "2160", // lock 3 years
+    lockDuration: "21600", // lock 3 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -57,7 +57,7 @@ const tesnetBeneficiaries = [
     address: "0xa226e1963Aa07fa7B3898F1DD1A331e6Bd4179E6",
     amount: "25000000", // 25m
     upfrontAmount: "0",
-    lockDuration: "2880", // lock 4 years
+    lockDuration: "28800", // lock 4 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -70,7 +70,7 @@ const tesnetBeneficiaries = [
     address: "0x680420778088b18088Abc658351377d65FA62bD1",
     amount: "12500000", // 12,5m
     upfrontAmount: "0",
-    lockDuration: "1440", // lock 2 years
+    lockDuration: "14400", // lock 2 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -79,7 +79,7 @@ const tesnetBeneficiaries = [
     address: "0xe935fB98D37694074C6C4082E06cD392D8c9cB06",
     amount: "18750000", // 18,75m
     upfrontAmount: "0",
-    lockDuration: "2160", // lock 3 years
+    lockDuration: "21600", // lock 3 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -88,7 +88,7 @@ const tesnetBeneficiaries = [
     address: "0x6d4E9C723948Cdbb9F6aA398B3CbB97D198c4ECa",
     amount: "31250000", // 31,25m
     upfrontAmount: "0",
-    lockDuration: "2880", // lock 4 years
+    lockDuration: "28800", // lock 4 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -101,7 +101,7 @@ const tesnetBeneficiaries = [
     address: "0xaeFefE2c60718d9033aF55Ac0E90992FC645C699",
     amount: "12500000", // 10m
     upfrontAmount: "0",
-    lockDuration: "1440", // lock 2 years
+    lockDuration: "14400", // lock 2 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -110,7 +110,7 @@ const tesnetBeneficiaries = [
     address: "0xd8d344e6F75dDE8c7d9d2978d5cc23C088f504eA",
     amount: "18750000", // 450m
     upfrontAmount: "0",
-    lockDuration: "2160", // lock 3 years
+    lockDuration: "21600", // lock 3 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -119,7 +119,7 @@ const tesnetBeneficiaries = [
     address: "0xC305D523c4746a2339cDF4981037cb90612487AB",
     amount: "31250000", // 750m
     upfrontAmount: "0",
-    lockDuration: "2880", // lock 4 years
+    lockDuration: "28800", // lock 4 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -129,19 +129,19 @@ const tesnetBeneficiaries = [
   // wallet 1 20% lock 1 year of 575,000,000 115m
   // ==========================================================================
   {
-    address: "0x31ed9A9c5479F98A0CAFEDC701e716Dd107da97c",
+    address: "0xd6E61f7290E8E4a42A6786974E41fc7856AE48D2",
     amount: "115000000", // 115m
     upfrontAmount: "0",
-    lockDuration: "1440", // lock 2 years
+    lockDuration: "14400", // lock 2 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
   // wallet 2 30% lock 2 years of 575,000,000 172,5m
   {
-    address: "0xd6E61f7290E8E4a42A6786974E41fc7856AE48D2",
+    address: "0x6BAa8Ebdb4C8BD40cD64D4A103b5eABd8535E83C",
     amount: "172500000", // 172,5m
     upfrontAmount: "0",
-    lockDuration: "2160", // lock 3 years
+    lockDuration: "21600", // lock 3 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -150,7 +150,7 @@ const tesnetBeneficiaries = [
     address: "0x34AC2dF6f421A3B037547Ec460e2C2f9E0717fbd",
     amount: "287500000", // 287,5m
     upfrontAmount: "0",
-    lockDuration: "2880", // lock 4 years
+    lockDuration: "28800", // lock 4 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -160,7 +160,7 @@ const tesnetBeneficiaries = [
     address: "0x29fb3466D977b1467CB26e82dF38F3bD51a32720",
     amount: "30000000", // 30m
     upfrontAmount: "0",
-    lockDuration: "1440", // lock 2 years
+    lockDuration: "14400", // lock 2 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -169,7 +169,7 @@ const tesnetBeneficiaries = [
     address: "0x448956Bebf82a9ac122e6a42A8C8c91190E0Cad5",
     amount: "45000000", // 45m
     upfrontAmount: "0",
-    lockDuration: "2160", // lock 3 years
+    lockDuration: "21600", // lock 3 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -178,7 +178,7 @@ const tesnetBeneficiaries = [
     address: "0x6619a4caa2f905f07Ac731652ADE0D35dBD7614a",
     amount: "75000000", // 75m
     upfrontAmount: "0",
-    lockDuration: "2880", // lock 4 years
+    lockDuration: "28800", // lock 4 years
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -219,7 +219,7 @@ const tesnetBeneficiaries = [
     address: "0xC6b6F519c13aCFF3A30B21257d8a6cAcC57687a6",
     amount: "200000000",
     upfrontAmount: "0",
-    lockDuration: "60", // 1 month
+    lockDuration: "600", // 1 month = 5 min x 60 = 300s
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -228,7 +228,7 @@ const tesnetBeneficiaries = [
     address: "0x527D45a232d412C45eADB57cCe5bf942edF0364E",
     amount: "200000000",
     upfrontAmount: "0",
-    lockDuration: "120", // 2 month
+    lockDuration: "1200", // 2 month = 5 x 60 x 2 = 600s
     vestingDuration: "0",
     vestingInternal: "0",
   },
@@ -237,36 +237,39 @@ const tesnetBeneficiaries = [
     address: "0x482bE3Ec3A24eE4FEc390576473dbc9DaD2E6d66",
     amount: "200000000",
     upfrontAmount: "0",
-    lockDuration: "180", // 3 month
+    lockDuration: "1800", // 3 month = 5 x 60 x 3 = 900s
     vestingDuration: "0",
     vestingInternal: "0",
   },
   // ==========================================================================
   // total ecosystem 15% 750,000,000 750m
   // ecosystem
+  // ==========================================================================
+  // total ecosystem 15% 750,000,000 750m
+  // ecosystem
   {
-    address: "0xB71010cfAB22d4A8b80010c1FF90d57EF1D80a30",
+    address: "0x45F7F04096CE5FD7dCe63861002A2c04f7c034Dc",
     amount: "250000000",
     upfrontAmount: "0",
     lockDuration: "0",
-    vestingDuration: "120",
-    vestingInternal: "60",
+    vestingDuration: "1200", // lock 2 month = 5 min x 60 x 2 = 600s
+    vestingInternal: "600", // 1 month = 5 min x 60 = 300s
   },
   {
-    address: "0xe54dfbAde632D17DF10a2517c6A57acD3EbA23B2",
+    address: "0x5771510050A37fA274D1d312062AD5851Bc78512",
     amount: "250000000",
     upfrontAmount: "0",
-    lockDuration: "120", // 2 month
-    vestingDuration: "120",
-    vestingInternal: "60",
+    lockDuration: "1200", // lock 2 month = 5 min x 60 x 2 = 600s
+    vestingDuration: "1200", // 2 month
+    vestingInternal: "600", // 1 month
   },
   {
-    address: "0xb20fE47a815189e0AF085F6924Bcd609d6f8a3F2",
+    address: "0x7106C9FEEFa2E5Dbabf4053d2aa898Bde9c6ab17",
     amount: "250000000",
     upfrontAmount: "0",
-    lockDuration: "240", // 4 month
-    vestingDuration: "120",
-    vestingInternal: "60",
+    lockDuration: "2400", // lock 4 month
+    vestingDuration: "1200",
+    vestingInternal: "600",
   },
   // total mining 25% 1,250,000,000 1,25b
   // mining
@@ -275,8 +278,8 @@ const tesnetBeneficiaries = [
     amount: "1250000000",
     upfrontAmount: "0",
     lockDuration: "0",
-    vestingDuration: "2160", // 36 months (30 days as a month)
-    vestingInternal: "60", // 1 month
+    vestingDuration: "21600", // 36 months (30 days as a month)
+    vestingInternal: "600", // 1 month
   },
   // total reserve 10.2% 510,000,000 550m
   // reserve
@@ -284,9 +287,9 @@ const tesnetBeneficiaries = [
     address: "0x859b8dC74DFdf96e8A8BC1a61be2AC2b536c3fdc",
     amount: "510000000",
     upfrontAmount: "0",
-    lockDuration: "540", // 9 months (30 days as a month)
-    vestingDuration: "1800", // 30 months (30 days as a month)
-    vestingInternal: "60", // 1 month
+    lockDuration: "5400", // 9 months (30 days as a month)
+    vestingDuration: "18000", // 30 months (30 days as a month)
+    vestingInternal: "600", // 1 month = 10 x 60
   },
 ];
 
@@ -429,8 +432,8 @@ const mainnetBeneficiaries = [
 ];
 
 const token = {
-  name: "Spores Token",
-  symbol: "SPO",
+  name: "Spores Token 15",
+  symbol: "SPO15",
   decimals: 18,
   cap: "5000000000000000000000000000",
 };

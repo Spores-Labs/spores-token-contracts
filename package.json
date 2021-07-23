@@ -8,7 +8,9 @@
     "deploy-rinkeby": "truffle migrate --network rinkeby",
     "deploy-development": "truffle migrate --network development --reset",
     "deploy-rinkeby-reset": "truffle migrate --network rinkeby --reset",
-    "verify-rinkeby": "truffle run verify SporesToken --network rinkeby && truffle run verify SporesTokenVesting --network rinkeby"
+    "verify-rinkeby": "truffle run verify SporesToken --network rinkeby && truffle run verify SporesTokenVesting --network rinkeby",
+    "deploy-live": "truffle migrate --network live --reset",
+    "verify-live": "truffle run verify SporesToken --network live && truffle run verify SporesTokenVesting --network live"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^3.4.0-solc-0.7",
