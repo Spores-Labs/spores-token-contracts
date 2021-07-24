@@ -603,8 +603,8 @@ const mainnetBeneficiaries = [
 ];
 
 const token = {
-  name: "Spores Token 23",
-  symbol: "SPO23",
+  name: "Spores",
+  symbol: "SPO",
   decimals: 18,
   cap: "5000000000000000000000000000",
 };
