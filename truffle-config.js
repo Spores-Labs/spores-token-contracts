@@ -1,7 +1,6 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const alchemyapiKey = "Z4M2OsjCv2-dqWklky_h-J0C1086Ww-Q";
-const mnemonicOrPrivateKey =
-  "bc906ccba538b020fb563944cafb60cd0ac76d895a33aea63ea99d6d4d35ad61";
+const alchemyapiKey = "cGDOdE0mXa2sq-trJZ_KyAzXoIElp99_";
+const mnemonicOrPrivateKey = ""; // dong nay
 
 module.exports = {
   networks: {
@@ -29,7 +28,7 @@ module.exports = {
       provider: function () {
         return new HDWalletProvider(
           mnemonicOrPrivateKey,
-          "wss://rinkeby.infura.io/ws/v3/e8546a58c32d472790076824beaeae62"
+          `wss://eth-rinkeby.alchemyapi.io/v2/${alchemyapiKey}`
         );
       },
       network_id: 4,
