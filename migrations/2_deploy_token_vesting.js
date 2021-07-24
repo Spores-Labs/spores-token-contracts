@@ -11,7 +11,7 @@ module.exports = async (deployer, network, accounts) => {
   const _decimals = config.token.decimals; // Token decimals
   const _cap = new BN(config.token.cap); // Token total supply
 
-  const seconds = 1627050600; // Token listing date in seconds: 2PM 20/7/2021. Will be replace with mainnet setting
+  const seconds = 0; // Token listing date in seconds: 2PM 20/7/2021. Will be replace with mainnet setting
   //   const seconds = 1626764400; // Token listing date in seconds: 2PM 20/7/2021. Will be replace with mainnet setting
   const _tokenListingDate = new BN(seconds);
 

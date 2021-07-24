@@ -223,7 +223,7 @@ const tesnetBeneficiaries = [
   // total community 12% 600,000,000 600m
   // community 1 200m 4%
   {
-    address: "0xC6b6F519c13aCFF3A30B21257d8a6cAcC57687a6",
+    address: "0x6C1764fD2294EA5a028b986DdBD8EF5379FAAE76",
     amount: "200000000",
     upfrontAmount: "0",
     lockDuration: "300", // 1 month = 5 min x 60 = 300s
@@ -439,8 +439,8 @@ const mainnetBeneficiaries = [
 ];
 
 const token = {
-  name: "Spores Token 18",
-  symbol: "SPO18",
+  name: "Spores Token 19",
+  symbol: "SPO19",
   decimals: 18,
   cap: "5000000000000000000000000000",
 };
