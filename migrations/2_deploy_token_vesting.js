@@ -1,7 +1,13 @@
 const BN = require("bn.js");
+const { token } = require("../conf/config.mainnet");
 var config = require("../conf/config.mainnet");
 const SporesToken = artifacts.require("SporesToken");
 const SporesTokenVesting = artifacts.require("SporesTokenVesting");
+
+const ADMIN_ROLE = "0x0000000000000000000000000000000000000000000000000000000000000000";
+const MINTER_ROLE = "0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6";
+const PAUSER_ROLE = "0x65d7a28e3265b37a6474929f336521b332c1681b933f6cb9f3376673440d862a";
+const newOwner = "0x482bE3Ec3A24eE4FEc390576473dbc9DaD2E6d66" //replace new owner here
 
 module.exports = async (deployer, network, accounts) => {
   if (network == "test") return;
@@ -98,4 +104,12 @@ module.exports = async (deployer, network, accounts) => {
       }
     }
   }
+
+  await tokenInstance.grantRole(ADMIN_ROLE, newOwner);
+  await tokenInstance.grantRole(MINTER_ROLE, accounts[0]);
+  await tokenInstance.grantRole(PAUSER_ROLE, accounts[0]);
+  await tokenInstance.transferOwnership(newOwner);
+  await tokenInstance.renounceRole(MINTER_ROLE, accounts[0]);
+  await tokenInstance.renounceRole(PAUSER_ROLE, accounts[0]);
+  await tokenInstance.renounceRole(ADMIN_ROLE, accounts[0]);
 };
