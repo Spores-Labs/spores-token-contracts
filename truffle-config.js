@@ -1,5 +1,6 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const alchemyapiKey = "cGDOdE0mXa2sq-trJZ_KyAzXoIElp99_";
+const etherScanApiKey = "QT36GUJAF1QXXIIBBKTUPAZXTUWFIWJ579";
 const mnemonicOrPrivateKey = ""; // dong nay
 
 module.exports = {
@@ -18,11 +19,12 @@ module.exports = {
       provider: function () {
         return new HDWalletProvider(
           mnemonicOrPrivateKey,
-          `wss://eth-mainnet.alchemyapi.io/v2/${alchemyapiKey}`
+          "wss://mainnet.infura.io/ws/v3/e380807002c84a25b1ca1033f498424c"
         );
       },
       network_id: 1,
       gas: 6000000,
+      networkCheckTimeout: 600000,
     },
     rinkeby: {
       provider: function () {
@@ -47,7 +49,7 @@ module.exports = {
   },
   plugins: ["truffle-plugin-verify"],
   api_keys: {
-    etherscan: "R6BG54BYF7ZDNQ4JYI9IAWVDC6MGEYD8IY",
+    etherscan: etherScanApiKey,
   },
   mocha: {
     timeout: 100000,

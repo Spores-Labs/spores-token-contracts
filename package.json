@@ -10,6 +10,7 @@
     "deploy-rinkeby-reset": "truffle migrate --network rinkeby --reset",
     "verify-rinkeby": "truffle run verify SporesToken --network rinkeby && truffle run verify SporesTokenVesting --network rinkeby",
     "deploy-live": "truffle migrate --network live --reset --skip-dry-run",
+    "deploy-live-without-reset": "truffle migrate --network live --skip-dry-run",
     "verify-live": "truffle run verify SporesToken --network live && truffle run verify SporesTokenVesting --network live"
   },
   "dependencies": {
