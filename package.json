@@ -6,7 +6,7 @@
     "test": "truffle test --network test",
     "prettier": "prettier --write **/*.sol",
     "deploy-rinkeby": "truffle migrate --network rinkeby",
-    "deploy-development": "truffle migrate --network development --reset",
+    "deploy-development": "truffle migrate --network development --reset --skip-dry-run",
     "deploy-rinkeby-reset": "truffle migrate --network rinkeby --reset",
     "verify-rinkeby": "truffle run verify SporesToken --network rinkeby && truffle run verify SporesTokenVesting --network rinkeby",
     "deploy-live": "truffle migrate --network live --reset --skip-dry-run",

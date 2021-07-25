@@ -1,7 +1,8 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const alchemyapiKey = "cGDOdE0mXa2sq-trJZ_KyAzXoIElp99_";
 const etherScanApiKey = "QT36GUJAF1QXXIIBBKTUPAZXTUWFIWJ579";
-const mnemonicOrPrivateKey = ""; // dong nay
+const mnemonicOrPrivateKey =
+  "deb0f2feec117eb3f66cb1f875c6f4e68ea99600b8779ff906a7aa44c6f1ace9"; // dong nay
 
 module.exports = {
   networks: {

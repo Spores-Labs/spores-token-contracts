@@ -60,12 +60,12 @@ module.exports = async (deployer, network, accounts) => {
   console.log(
     `Prepare to deploy SporesTokenVesting contract to ${network} ...`
   );
-  //   await deployer.deploy(
-  //     SporesTokenVesting,
-  //     tokenInstance.address,
-  //     _tokenListingDate,
-  //     { from: accounts[0] }
-  //   );
+  await deployer.deploy(
+    SporesTokenVesting,
+    tokenInstance.address,
+    _tokenListingDate,
+    { from: accounts[0] }
+  );
   let tokenVestingInstance = await SporesTokenVesting.deployed();
   console.log(
     `SporesTokenVesting contract deployed to ${network} at address ${tokenVestingInstance.address}`
